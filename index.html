@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed - Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fa-brands fa-instagram fs-3 me-2"></i>
+                <span class="fw-bold">Instagram</span>
+            </a>
+            <div class="d-flex">
+                <button type="button" class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#createPostModal">
+                    Create a new post
+                </button>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="createPostModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label class="fw-bold mb-2">Caption:</label>
+                    <textarea class="form-control" rows="3" placeholder="Add the caption of your post here"></textarea>
+                    <div class="mt-2">
+                        <button class="btn btn-light border"><i class="fa-solid fa-camera"></i></button>
+                        <button class="btn btn-light border"><i class="fa-solid fa-location-dot"></i></button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-tabs justify-content-center border-0 mt-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active text-secondary" id="grid-tab" data-bs-toggle="tab" data-bs-target="#grid-view" type="button" role="tab">
+                <i class="fa-solid fa-table-cells"></i>
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link text-secondary" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed-view" type="button" role="tab">
+                <i class="fa-solid fa-square"></i>
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        
+        <div class="tab-pane fade show active" id="grid-view" role="tabpanel">
+            <div class="container-fluid p-0 mt-2">
+                <div class="row g-2">
+                    <div class="col-4"><img src="https://picsum.photos/id/237/600/400" class="img-fluid w-100 object-fit-cover" style="height: 30vw;"></div>
+                    <div class="col-4"><img src="https://picsum.photos/600/600?random=2" class="img-fluid w-100 object-fit-cover" style="height: 30vw;"></div>
+                    <div class="col-4"><img src="https://picsum.photos/600/600?random=3" class="img-fluid w-100 object-fit-cover" style="height: 30vw;"></div>
+                    <div class="col-4"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&h=400&auto=format&fit=crop" class="img-fluid w-100 object-fit-cover" style="height: 30vw;"></div>
+                    <div class="col-4"><img src="https://picsum.photos/600/600?random=5" class="img-fluid w-100 object-fit-cover" style="height: 30vw;"></div>
+                    <div class="col-4"><img src="https://picsum.photos/600/600?random=6" class="img-fluid w-100 object-fit-cover" style="height: 30vw;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="feed-view" role="tabpanel">
+            <div class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-6">
+                        
+                        <div class="card mb-4">
+                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                <h5 class="m-0">My Crazy Dog Spark!</h5>
+                                <small class="text-muted">08/26</small>
+                            </div>
+                            <img src="https://picsum.photos/id/237/600/400" class="card-img-top" alt="post">
+                            <div class="card-body">
+                                <p class="fw-bold">204 Likes</p>
+                                <p>This is an example of a very good photo that you can post on instagram.</p>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                                <h5 class="m-0">Amazing Goal!</h5>
+                                <small class="text-muted">09/10</small>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=600&h=400&auto=format&fit=crop" class="card-img-top" alt="post">
+                            <div class="card-body">
+                                <p class="fw-bold">10,500 Likes</p>
+                                <p>Incredible moment captured during the match!</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
